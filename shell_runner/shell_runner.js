@@ -18,7 +18,8 @@ router.use("/exec",async(req,res,next)=>{
         const exec_result_buffer = await execPromise(command_options);
         console.log({"msg":"after execPromise"});
         // res.end(`<script>console.log(decodeURIComponent(\`${encodeURIComponent(exec_result_buffer.toString())}\`));</script>`);
-        res.end(exec_result_buffer.toString());
+        // res.end(exec_result_buffer.toString());
+        res.send(exec_result_buffer);
     }catch(e){
         res.json({
             e,
