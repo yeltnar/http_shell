@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
-    "create_cert":"mkdir config; mkdir config/key; cd config/key && openssl req -nodes -new -x509 -keyout server.key -out server.cert"
+    "postinstall":"npm run create_cert",
+    "create_cert":"mkdir config; mkdir config/key; cd config/key && openssl req -nodes -new -x509 -keyout server.key -out server.cert; cd ../.."
   },
   "author": "",
   "license": "ISC",
